@@ -1,0 +1,265 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   
+}
+
+@media (max-width: 600px) {
+   body {
+       background-position: center top; /* Centraliza no topo */
+       background-size: contain; /* Alternativa para garantir visualização */
+   }
+}
+
+:root {
+   --text-color: white;
+   --bg-url: url(assets/bg-mobile.jpg);
+   --stroke-color: rgba(255, 255, 255, 0.5);
+   --surface-color:  rgba(255, 255, 255, 0.10);
+   --surface-color-hover:  rgba(255, 255, 255, 0.02);
+   --highlight-color: rgba(0,0,0,0.2); 
+   --switch-bg-url: url(assets/moon-stars.svg);
+}
+   
+body {
+   
+   background: url(assets/bg-mobile.jpg) no-repeat top center /cover;
+   font-family: 'Inter', sans-serif;
+   color: var(--text-color);
+   height: 100vh; /*vh = view port height*/
+   /*border: 2px solid black;*/
+
+}
+
+a {
+   color: var(--text-color);
+}
+
+
+#container {
+   display: flex;
+   flex-direction: row;
+   margin: 10px auto 0px; 
+   padding: 0 24px;
+   /*border: 2px solid red;*/
+   align-items: center;
+   justify-content: space-evenly;
+
+}
+
+/*profile*/
+#profile {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 10px;
+   /*border: 2px solid yellow;*/
+}
+
+#profile img {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   /*border: 2px solid green;*/
+   height: 50vh;
+}
+
+#profile p {
+   align-items: center;
+   font-weight: 500;
+   line-height: 24px;
+   margin-top: 8px;
+   /*border: 2px solid white;*/
+} 
+
+
+.light #switch button {
+   animation: slide-in 0.2s forwards;
+   /*right: 0;*/
+   /*left: initial;*/
+
+}
+
+#switch button:hover {
+   outline: 8px solid var(--highlight-color);
+}
+
+#switch span {
+   display: flex;
+   width: 64px;
+   height: 24px;
+   background: var(--surface-color);
+   border: 1px solid var(--stroke-color);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   border-radius: 9999px;
+
+}
+
+/* Links */
+ul {
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 16px;
+   padding: 5px 0;
+
+}
+
+ul li a{
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 16px 24px;
+   background: var(--surface-color);
+   border: 1px solid var(--stroke-color);
+   border-radius: 8px;
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   font-size: 1rem;
+   text-decoration: none;
+   font-weight: 500;
+   
+   
+   width: 300px;
+
+   transition: background 0.2s;
+}
+
+ul li span{
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 16px 24px;
+   background: var(--surface-color);
+   border: 1px solid var(--stroke-color);
+   border-radius: 8px;
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   font-size: 1rem;
+   text-decoration: none;
+   font-weight: 500;
+   
+   
+   width: 300px;
+
+   transition: background 0.2s;
+}
+
+.input-hidden {
+   height: 0;
+   width: 0;
+   visibility: hidden;
+}
+
+
+
+/* pseudo-selector ou sudo-selector*/
+ul li a:hover {
+   background: var(--surface-color-hover);
+   border: 1.5px solid white;
+   
+}
+
+/*social links*/
+
+#social-links {
+   display: flex;
+   justify-content: center;
+   padding: 24px 0;
+   font-size: 1.5rem;
+   /*border: 2px solid pink;*/
+}
+
+#social-links a {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 16px;
+
+   transition: background 0.2s;
+   border-radius: 50%;
+   
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+  
+}
+
+footer {
+   padding: 24px;
+   text-align: center;
+   font-size: 0.875rem;
+}
+
+/* media queries*/
+/* media queries são funcionamm com a linha <meta name="viewport" content="width=device-width, initial-scale=1.0">*/
+/* adicionada ao Index.html*/
+
+@media (max-width: 700px) {
+
+   #container {
+      display: flex;
+      flex-direction: column;
+      margin: 60px auto 0px; 
+      padding: 0 24px;
+      /*border: 2px solid red;*/
+      align-items: center;
+      justify-content: space-evenly;
+   
+   }
+
+
+   #profile img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /*border: 2px solid blue;*/
+      height: 20vh;
+   }
+
+   ul li a{
+   
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      background: var(--surface-color);
+      border: 1px solid var(--stroke-color);
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      width: 350px;
+      transition: background 0.2s;
+   }
+
+
+}
+
+/*animation*/
+@keyframes slide-in {
+   from {
+      left: 0;
+   }
+   to {
+      left: 50%;
+      }
+}
+
+@keyframes slide-back {
+   from {
+      left: 50%;
+   }
+   to {
+      left: 0;
+      }
+}
+
